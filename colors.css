@@ -1,0 +1,95 @@
+
+:root {
+  /* Role themes */
+  --color-buyer-primary: #f97316;
+  --color-buyer-dark: #c2410c;
+  --color-buyer-light-bg: #fff7ed;
+  --color-buyer-border: #fed7aa;
+
+  --color-farmer-primary: #16a34a;
+  --color-farmer-dark: #166534;
+  --color-farmer-light-bg: #f0fdf4;
+  --color-farmer-border: #bbf7d0;
+
+  --color-admin-primary: #dc2626;
+  --color-admin-dark: #991b1b;
+  --color-admin-light-bg: #fef2f2;
+  --color-admin-border: #fecaca;
+
+  --color-delivery-primary: #7c3aed;
+  --color-delivery-dark: #5b21b6;
+  --color-delivery-light-bg: #f5f3ff;
+  --color-delivery-border: #ddd6fe;
+
+  /* Neutrals */
+  --color-background: #f8fafc;
+  --color-page-bg: #f1f5f9;
+  --color-card-bg: #ffffff;
+  --color-sidebar-bg: #f8fafc;
+  --color-text: #0f172a;
+  --color-text-soft: #475569;
+  --color-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+  --color-white: #ffffff;
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-danger: #dc2626;
+  --color-shadow: transparent; /* disabled inner-card shadows per UI request */
+  --outer-shadow: rgba(15, 23, 42, 0.08); /* shadow used for outer/top-level cards only */
+
+  /* Layout */
+  --container-xl: 1200px;
+  --container-lg: 1080px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+}
+
+html { font-family: "Open Sans", sans-serif; }
+
+/* Small reset */
+*{box-sizing:border-box}
+body{margin:0;background:var(--color-page-bg);color:var(--color-text);line-height:1.5}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,
+input,
+select {
+  font: inherit;
+}
+
+body.theme-buyer {
+  --color-brand: var(--color-buyer-primary);
+  --color-brand-soft: var(--color-buyer-light-bg);
+  --color-brand-border: var(--color-buyer-border);
+}
+
+body.theme-farmer {
+  --color-brand: var(--color-farmer-primary);
+  --color-brand-soft: var(--color-farmer-light-bg);
+  --color-brand-border: var(--color-farmer-border);
+}
+
+body.theme-admin {
+  --color-brand: var(--color-admin-primary);
+  --color-brand-soft: var(--color-admin-light-bg);
+  --color-brand-border: var(--color-admin-border);
+}
+
+body.theme-delivery {
+  --color-brand: var(--color-delivery-primary);
+  --color-brand-soft: var(--color-delivery-light-bg);
+  --color-brand-border: var(--color-delivery-border);
+}

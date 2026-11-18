@@ -1,0 +1,14 @@
+# Private credentials
+demo-credentials.txt
+.env
+
+# IDE files
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+

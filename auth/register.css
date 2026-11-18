@@ -1,0 +1,216 @@
+@import "../colors.css";
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(245, 247, 250, 0.70), rgba(238, 244, 255, 0.70)),
+    url("../assets/bales_of_hay_landscape.jpg") center/cover no-repeat fixed;
+  font-family: "Open Sans", sans-serif;
+  color: var(--color-text);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn-ghost {
+  background: var(--color-card-bg);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.auth-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 72px);
+  padding: 32px 16px;
+}
+
+.auth-card {
+  width: min(100%, 760px);
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 18px 40px var(--color-shadow);
+  padding: clamp(24px, 3vw, 40px);
+}
+
+.auth-card h1 {
+  margin: 0 0 8px;
+  font-size: clamp(28px, 3vw, 40px);
+  letter-spacing: -0.04em;
+}
+
+.muted {
+  margin: 0 0 24px;
+  color: var(--color-muted);
+}
+
+.form-feedback {
+  margin: 0 0 24px;
+  padding: 12px 16px;
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.form-feedback-error {
+  color: var(--color-danger);
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.form-feedback-success {
+  color: #166534;
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.auth-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.role-picker {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.role-picker input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.role-option {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  min-height: 72px;
+  padding: 12px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-white);
+  color: var(--color-text-soft);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.role-option small {
+  color: var(--color-muted);
+}
+
+.role-name {
+  font-weight: 800;
+}
+
+.role-picker input:checked + .role-option {
+  background: var(--color-buyer-light-bg);
+  border-color: var(--color-buyer-primary);
+  color: var(--color-buyer-primary);
+  transform: translateY(-1px);
+}
+
+.role-picker input:checked + .role-option small {
+  color: var(--color-buyer-primary);
+}
+
+.field {
+  display: block;
+}
+
+.field span {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-white);
+  padding: 12px 14px;
+  color: var(--color-text);
+  box-sizing: border-box;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: 2px solid rgba(249, 115, 22, 0.2);
+  border-color: var(--color-buyer-primary);
+}
+
+.role-panel {
+  grid-column: 1 / -1;
+  display: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  padding: 16px;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+}
+
+.role-panel.is-visible {
+  display: grid;
+}
+
+#role-buyer:checked ~ .buyer-panel,
+#role-farmer:checked ~ .farmer-panel,
+#role-delivery:checked ~ .delivery-panel,
+#role-admin:checked ~ .admin-panel {
+  display: grid;
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  margin-top: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-buyer-primary), var(--color-buyer-dark));
+  color: var(--color-white);
+}
+
+@media (max-width: 720px) {
+  .role-picker {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .role-panel,
+  .auth-form {
+    grid-template-columns: 1fr;
+  }
+}
